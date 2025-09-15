@@ -1,0 +1,23 @@
+﻿//паттерн проектирования Singleton
+//используется, если нужен один экземпляр на всю программу 
+class Singleton {
+private:
+    Singleton() {} //нельзя создать обект извне
+    static Singleton* ptr;
+    Singleton(const Singleton&) = delete; //удаленный конструктор копирования (запрет копирования)
+    Singleton& operator=(const Singleton&) = delete; //удаленный оператор присваивания (запрет присваивания)
+    
+public:
+    static Singleton& getObject() {
+        if (ptr == nullptr) {
+            ptr = new Singleton();
+        }
+        return *ptr;
+    }
+};
+
+Singleton* Singleton::ptr = nullptr;
+
+int main(){
+
+}
