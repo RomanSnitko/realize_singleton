@@ -8,6 +8,7 @@ private:
     Singleton& operator=(const Singleton&) = delete; //can not appropriate
     
 public:
+    //Singleton() {}
     static Singleton& getObject() {
         if (ptr == nullptr) {
             ptr = new Singleton();
